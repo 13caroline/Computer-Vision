@@ -1,4 +1,3 @@
-% C:\Program Files\MATLAB\R2018a\toolbox\images\imdata
 I = imread('imdata\castle.png', 'png'); % 512 x 512 x 3
 figure(1), imshow(I);
 img_gray = rgb2gray(I); % 512 x 512
@@ -15,7 +14,7 @@ figure(3), imshow(img_ft);
 B = im2double(I); % converte imagem para double
 figure(4), imhist(B, 256); % Histograma
 
-D = imadjust(B, [0 1],[1 0]); % Cria b«negativo da imagem
+D = imadjust(B, [0 1],[1 0]); % Cria bÂ«negativo da imagem
 figure(5), imshow(D); % MOstra negativa
 
 E = histeq(B); % Melhora contraste 
