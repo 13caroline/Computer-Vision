@@ -1,7 +1,7 @@
 % 1
 I = imread('imdata/lena.jpg');
 J = rgb2gray(I);
-figure(1), imshow(J);
+figure(1), imshow(J); title('Original');
 
 % 2
 K = imnoise(J, 'salt & pepper', 0.02);
@@ -79,20 +79,17 @@ CR = imfilter(K,k,'circular');
 figure(20), imshow(CR);
 
 % 8 
-% Método Mediana - Muito melhor para ruído
+% MÃ©todo Mediana - Muito melhor para ruÃ­do
 Med = medfilt2(K, [3 3]);
 figure(21), imshow(Med);
 
 % 9
 % Filtro Passa Alto
-%I9 = imsharpen(J);
-%figure(22), imshow(I9);
-
 filter_matrix = fspecial('Gaussian', 5, 1);
 I_filtered = J - imfilter(J, filter_matrix);
-figure(22), imshow(I_filtered);
+figure(22), imshow(I_filtered); title('Gaussian');
 
 % Soma da original com a laplaciana da gaussiana
 h1 = fspecial('laplacian',0.2);
-fil_I2 = J - imfilter(J, h1);
-figure(23), imshow(fil_I2);
+fil_I2 = J + imfilter(J, h1);
+figure(23), imshow(fil_I2); title('laplacian of gaussian');
