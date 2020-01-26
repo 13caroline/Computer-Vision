@@ -1,2 +1,2 @@
 # Computer_Vision
-Computer Vision code (lessons)
+Computer Vision code
