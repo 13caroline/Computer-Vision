@@ -1,2 +1,2 @@
 # Computer_Vision
-Computer Vision code
+Computer Vision classes and projects
